@@ -1,0 +1,206 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 1rem;
+        /* Warm romantic palette - soft peach/coral/rose tones */
+        --background: 0.98 0.02 25;
+        --foreground: 0.25 0.04 15;
+        --card: 1 0.015 30;
+        --card-foreground: 0.25 0.04 15;
+        --popover: 1 0.015 30;
+        --popover-foreground: 0.25 0.04 15;
+        --primary: 0.65 0.18 15;
+        --primary-foreground: 0.99 0.01 25;
+        --secondary: 0.92 0.05 35;
+        --secondary-foreground: 0.35 0.06 15;
+        --muted: 0.95 0.03 30;
+        --muted-foreground: 0.55 0.03 20;
+        --accent: 0.88 0.12 340;
+        --accent-foreground: 0.25 0.04 15;
+        --destructive: 0.55 0.22 25;
+        --destructive-foreground: 0.99 0.01 25;
+        --border: 0.90 0.04 30;
+        --input: 0.90 0.04 30;
+        --ring: 0.65 0.18 15;
+        --chart-1: 0.65 0.18 15;
+        --chart-2: 0.70 0.15 340;
+        --chart-3: 0.75 0.12 50;
+        --chart-4: 0.60 0.20 5;
+        --chart-5: 0.80 0.10 320;
+    }
+
+    .dark {
+        --background: 0.15 0.03 15;
+        --foreground: 0.95 0.02 25;
+        --card: 0.20 0.04 20;
+        --card-foreground: 0.95 0.02 25;
+        --popover: 0.18 0.04 18;
+        --popover-foreground: 0.95 0.02 25;
+        --primary: 0.75 0.15 340;
+        --primary-foreground: 0.15 0.03 15;
+        --secondary: 0.25 0.05 25;
+        --secondary-foreground: 0.95 0.02 25;
+        --muted: 0.25 0.04 20;
+        --muted-foreground: 0.65 0.03 25;
+        --accent: 0.35 0.08 340;
+        --accent-foreground: 0.95 0.02 25;
+        --destructive: 0.60 0.20 20;
+        --destructive-foreground: 0.95 0.02 25;
+        --border: 0.30 0.04 20;
+        --input: 0.30 0.04 20;
+        --ring: 0.75 0.15 340;
+    }
+
+    * {
+        @apply border-border;
+    }
+    
+    body {
+        @apply bg-background text-foreground;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+        overflow-x: hidden;
+    }
+
+    button:focus-visible,
+    a:focus-visible {
+        @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+    }
+}
+
+/* Slide transitions */
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.slide-enter {
+    animation: slideInFromRight 0.4s ease-out;
+}
+
+.slide-enter-back {
+    animation: slideInFromLeft 0.4s ease-out;
+}
+
+.fade-enter {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Confetti animations */
+@keyframes confettiFall {
+    0% {
+        transform: translateY(-100vh) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+@keyframes confettiSway {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(30px);
+    }
+}
+
+.confetti-piece {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    animation: confettiFall 3s linear forwards, confettiSway 1s ease-in-out infinite;
+}
+
+/* Floating hearts */
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) translateX(0) rotateZ(0deg) scale(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) translateX(var(--drift-x, 0)) rotateZ(var(--rotate-z, 0deg)) scale(1);
+        opacity: 0;
+    }
+}
+
+.floating-heart {
+    position: absolute;
+    font-size: 2rem;
+    animation: floatUp 4s ease-in-out forwards;
+    pointer-events: none;
+}
+
+/* 3D heart effect */
+.heart-3d {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.heartbeat {
+    animation: heartbeat 1s ease-in-out infinite;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .slide-enter,
+    .slide-enter-back,
+    .fade-enter {
+        animation: none;
+    }
+    
+    .confetti-piece,
+    .floating-heart {
+        animation: none;
+        opacity: 0.3;
+    }
+    
+    .heartbeat {
+        animation: none;
+    }
+}

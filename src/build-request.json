@@ -1,0 +1,47 @@
+{
+  "kind": "build_request",
+  "title": "Remove the caffeine.ai footer credit from the end screen",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-8",
+      "text": "Remove the “Built with … using caffeine.ai” footer/credit from the final end screen so the site appears fully handmade.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Remove it"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The EndScreen slide no longer renders any footer/credit section containing the text “Built with”, “caffeine.ai”, or a link to https://caffeine.ai/.",
+        "The end screen still shows the outcome emoji/message, optional heart row (for the 'ofc' path), the visual effects, and the “Start Over” button with unchanged behavior.",
+        "A user viewing the deployed app cannot see any “created by/built with caffeine.ai” branding anywhere on the end screen."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not edit any files under frontend/src/components/ui or any other paths listed in frontend.immutablePaths.",
+    "Keep the backend as-is (single Motoko actor); no backend changes are required for this request."
+  ],
+  "nonGoals": [
+    "Adding new slides, changing the question/answer text, or altering the branching logic.",
+    "Changing the visual theme beyond what is necessary to remove the footer section."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}

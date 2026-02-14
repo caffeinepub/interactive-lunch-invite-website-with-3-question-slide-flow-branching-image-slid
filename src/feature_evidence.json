@@ -1,0 +1,23 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-remove-the-built-with-using-caffeine-ai-footer-credit-from-the-final-end-screen-so-the-site-appears-fully-handmade",
+      "featureTitle": "Remove the “Built with … using caffeine.ai” footer/credit from the final end screen so the site appears fully handmade.",
+      "files": [
+        "frontend/src/features/lunch-invite/slides/EndScreen.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

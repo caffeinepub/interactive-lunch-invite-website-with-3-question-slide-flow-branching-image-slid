@@ -1,0 +1,16 @@
+{
+  "frontend/src/index.css": "Global styles with warm romantic OKLCH color palette (peach/coral/rose tones), slide transition animations, confetti effects, floating hearts, and accessibility features including reduced-motion support.",
+  "frontend/src/App.tsx": "Root application component that renders the LunchInviteFlow component within a full-screen container.",
+  "frontend/src/features/lunch-invite/LunchInviteFlow.tsx": "Main state machine managing the 3-question slide flow with branching logic, navigation guards to prevent double-submission, and state tracking for user selections.",
+  "frontend/src/features/lunch-invite/SlideShell.tsx": "Reusable container component providing consistent card-based layout with backdrop blur, rounded corners, and responsive padding for all slides.",
+  "frontend/src/features/lunch-invite/slides/Q1.tsx": "First question slide component with two option buttons (\"Yes\" / \"No im okay\") that triggers appropriate navigation based on selection.",
+  "frontend/src/features/lunch-invite/slides/Q2.tsx": "Second question slide component with four option buttons for guessing who's asking, each styled distinctly with the gradient option for \"Yuvi ofc\".",
+  "frontend/src/features/lunch-invite/slides/Q3.tsx": "Third question slide component with three option buttons for the final lunch invitation response.",
+  "frontend/src/features/lunch-invite/slides/ImageSlide.tsx": "Reusable component displaying static generated images with a \"Next\" button to continue the flow.",
+  "frontend/src/features/lunch-invite/slides/imageSlideMap.ts": "Mapping object connecting Q2 answer options to their corresponding static image asset paths.",
+  "frontend/src/features/lunch-invite/slides/EndScreen.tsx": "Final screen displaying outcome message with appropriate visual effects (confetti/hearts/broken hearts), optional heart row for 'ofc' path, and restart button without any footer attribution.",
+  "frontend/src/features/lunch-invite/effects/ConfettiEffect.tsx": "Animated confetti effect component with celebration and heartbroken variants, generating 50 random pieces with varied colors, shapes, delays, and durations.",
+  "frontend/src/features/lunch-invite/effects/FloatingHearts3D.tsx": "3D floating hearts animation component creating multiple heart emojis that float upward with drift and rotation effects.",
+  "frontend/src/features/lunch-invite/effects/FloatingBrokenHearts3D.tsx": "3D floating broken hearts animation component for the \"No\" response, creating broken heart emojis with upward float and rotation.",
+  "frontend/src/hooks/useQueries.ts": "Empty placeholder file as no backend queries are required for this client-side only application."
+}

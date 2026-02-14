@@ -1,2 +1,3 @@
-# interactive-lunch-invite-website-with-3-question-slide-flow-branching-image-slid
-Exported from Caffeine project: Interactive lunch invite website with 3-question slide flow, branching image slides, and final celebration/heart effects
+## 
+
+To run app build and run docker image: `docker build -t app . docker run -it --network host app`

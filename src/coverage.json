@@ -1,0 +1,38 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-14T20:19:16.615Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 1,
+    "implemented": 1,
+    "items": [
+      {
+        "id": "REQ-8",
+        "summary": "Remove the “Built with … using caffeine.ai” footer/credit from the final end screen so the site appears fully handmade.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/features/lunch-invite/slides/EndScreen.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/features/lunch-invite/slides/EndScreen.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "build-template/README.md",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/src/features/lunch-invite/slides/EndScreen.tsx",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

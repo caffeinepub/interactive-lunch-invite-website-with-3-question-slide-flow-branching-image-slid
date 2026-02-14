@@ -1,0 +1,23 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Remove caffeine.ai footer credit from EndScreen",
+  "requirements": [
+    {
+      "id": "REQ-8",
+      "summary": "Remove the caffeine.ai “Built with …” footer/credit from the final EndScreen while keeping the rest of the end screen unchanged.",
+      "acceptanceCriteria": [
+        "The EndScreen slide no longer renders any footer/credit section containing the text “Built with”, “caffeine.ai”, or a link to https://caffeine.ai/.",
+        "The end screen still shows the outcome emoji/message, optional heart row (for the 'ofc' path), the visual effects, and the “Start Over” button with unchanged behavior.",
+        "A user viewing the deployed app cannot see any “created by/built with caffeine.ai” branding anywhere on the end screen."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/features/lunch-invite/slides/EndScreen.tsx",
+          "operation": "modify",
+          "description": "Remove the footer/credit JSX that renders “Built with … using caffeine.ai” (including the external link and copyright line) from the EndScreen component, ensuring the outcome emoji/message, optional heart row (for 'ofc'), visual effects, and Start Over button remain unchanged."
+        }
+      ]
+    }
+  ]
+}

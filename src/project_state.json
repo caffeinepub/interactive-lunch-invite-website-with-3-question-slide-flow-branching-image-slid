@@ -1,0 +1,105 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 5,
+  "summary": "Playful interactive website to ask someone out for lunch (15 Feb 2026) using a 3-question, slide-based multiple-choice flow with conditional image slides and final visual effects based on the last answer.",
+  "architectural_notes": [
+    "Implement slide/state machine navigation: Q1 -> (optional image slide if option 2) -> Q2 -> image slide (based on option) -> Q3 -> final message + visual effect based on option.",
+    "Provide reusable components for: question slide, image slide (text-on-image), and effect overlay (confetti/hearts/heartbroken).",
+    "Ensure EndScreen does not render any external builder credit/footer; keep end screen purely app-owned content.",
+    "Implement slide transitions via a consistent animation approach across the slide/state machine (e.g., shared transition wrapper for all slides)."
+  ],
+  "known_issues": [
+    "Footer/credit (“Built with caffeine.ai”) is still visible on the deployed link; removal is pending and requires rebuild/redeploy after code change."
+  ],
+  "isFixRequest": true,
+  "existing_features": [
+    {
+      "id": "feature-create-a-slide-based-mobile-friendly-react-ui-that-asks-the-user-out-for-lunch-on-15-february-2026-and-guides-them-through-the-exact-3-question-multiple-choice-flow-described-with-smooth-transitions-between-slides",
+      "title": "Create a slide-based, mobile-friendly React UI that asks the user out for lunch on 15 February 2026 and guides them through the exact 3-question multiple-choice flow described, with smooth transitions between slides.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-question-1-slide-with-the-exact-prompt-and-options-and-branch-to-the-correct-next-slide-based-on-the-selected-option-prompt-do-you-wanna-know-something-options-1-yes-2-no-im-okay-if-option-2-is-selected-show-an-image-slide-that-reads-im-gonna-tell-you-anyways-and-then-continue-to-question-2-if-option-1-is-selected-go-directly-to-question-2",
+      "title": "Implement Question 1 slide with the exact prompt and options, and branch to the correct next slide based on the selected option:\n- Prompt: \"Do you wanna know something?\"\n- Options: (1) \"Yes\" (2) \"No im okay\"\n- If option (2) is selected, show an image slide that reads: \"im gonna tell you anyways 😋\" and then continue to Question 2.\n- If option (1) is selected, go directly to Question 2.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-question-2-slide-with-the-exact-prompt-and-4-options-then-show-a-dedicated-image-slide-with-the-correct-text-based-on-the-selected-option-and-after-the-image-slide-always-continue-to-question-3-prompt-guess-who-is-asking-you-out-for-tommorows-lunch-options-1-someone-random-2-someone-special-3-someone-ugly-4-yuvi-ofc-if-1-image-text-that-random-someone-is-yuvi-if-2-image-text-that-speacial-someone-is-yuvi-if-3-image-text-that-ugly-someone-is-yuvi-if-4-image-text-yesssssss",
+      "title": "Implement Question 2 slide with the exact prompt and 4 options, then show a dedicated image slide with the correct text based on the selected option, and after the image slide always continue to Question 3.\n- Prompt: \"Guess who is asking you  out for tommorows lunch?\"\n- Options: (1) \"Someone random\" (2) \"Someone special\" (3) \"Someone ugly\" (4) \"Yuvi ofc\"\n- If (1): image text \"That random someone is yuvi\"\n- If (2): image text \"that speacial someone is yuvi\"\n- If (3): image text \"that ugly someone is yuvi\"\n- If (4): image text \"yesssssss 🥹\"",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-question-3-slide-with-the-exact-prompt-and-3-options-and-display-the-specified-final-message-and-visual-effects-based-on-the-selected-option-prompt-will-you-be-my-foodie-foodie-soul-for-tommorows-lunch-options-1-yess-2-ofc-yes-3-no-if-1-show-text-letttsss-goo-with-a-confetti-effect-if-2-show-text-yessss-with-many-floating-3d-heart-effects-if-3-show-text-he-is-anyways-gonna-take-you-out-with-heartbroken-confetti-and-floating-3d-heartbroken-heart-effects",
+      "title": "Implement Question 3 slide with the exact prompt and 3 options, and display the specified final message and visual effects based on the selected option:\n- Prompt: \"Will you be my foodie foodie soul for tommorows lunch?\"\n- Options: (1) \"Yess\" (2) \"Ofc yes\" (3) \"No\"\n- If (1): show text \"letttsss goo\" with a confetti effect.\n- If (2): show text \"yessss\" with many floating 3D heart effects.\n- If (3): show text \"He is anyways gonna take you out\" with heartbroken confetti and floating 3D heartbroken heart effects.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-generate-and-use-static-image-assets-for-each-required-image-slide-message-store-them-in-frontend-public-assets-generated-and-render-them-directly-from-the-frontend-not-via-the-backend",
+      "title": "Generate and use static image assets for each required ‘image slide’ message; store them in frontend/public/assets/generated and render them directly from the frontend (not via the backend).",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-cohesive-playful-romantic-visual-theme-across-the-whole-site-colors-typography-layout-transitions-suitable-for-a-lunch-invite-flow-avoid-a-blue-purple-dominant-palette",
+      "title": "Apply a cohesive, playful romantic visual theme across the whole site (colors, typography, layout, transitions) suitable for a lunch-invite flow; avoid a blue/purple-dominant palette.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-basic-ux-controls-disable-double-submission-on-option-clicks-provide-a-clear-way-to-restart-the-experience-from-the-end-screen-and-ensure-keyboard-accessibility-for-options-tab-enter-space",
+      "title": "Add basic UX controls: disable double-submission on option clicks, provide a clear way to restart the experience from the end screen, and ensure keyboard accessibility for options (tab/enter/space).",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-remove-the-built-with-using-caffeine-ai-footer-credit-from-the-final-end-screen-so-the-site-appears-fully-handmade",
+      "title": "Remove the “Built with … using caffeine.ai” footer/credit from the final end screen so the site appears fully handmade.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Build a slide-based 3-question multiple-choice website flow (incl. lunch date context) with branching logic, intermediate image slides, and final celebration/heart effects based on answers.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Add custom transitions/animations between question/image slides to make the flow feel more polished and handmade.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Remove the “Built with/created by caffeine.ai” footer/credit from the end screen so the site appears fully handmade.",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Interactive lunch invite website with 3-question slide flow, branching image slides, and final celebration/heart effects",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}
